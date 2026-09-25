@@ -243,6 +243,8 @@ img {
 .timeline {
   position: relative;
   display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
   gap: 1.5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -268,8 +270,9 @@ img {
 .timeline-item {
   position: relative;
   flex: 0 0 360px;
-  scroll-snap-align: start;
   display: flex;
+  align-items: stretch;
+  scroll-snap-align: start;
 }
 
 .timeline-item::before {
@@ -279,6 +282,9 @@ img {
 .timeline-card {
   position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background: var(--card);
   border-radius: 22px;
   padding: 1.2rem;
@@ -424,13 +430,20 @@ img {
   }
 
   .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-x: visible;
+    scroll-snap-type: none;
     gap: 1rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
 
   .timeline-item {
-    flex-basis: 82vw;
+    flex: 1 1 auto;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   .timeline-card {
